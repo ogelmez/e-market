@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as fromApp from '../../../store/app.reducer';
+import { Product } from 'src/app/core/models/Product';
 
 @Component({
   selector: 'app-product-list',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor() { }
+  shop: { products: Product[], cart: Product[] };
+  products: Product[];
+
+
+  constructor(private store: Store<fromApp.AppState>) {
+  }
 
   ngOnInit() {
+    this.store.select(state => {
+      return state;
+    }).subscribe(state => {
+      this.products = state.shop.products;
+    });
   }
 
 }

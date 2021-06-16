@@ -1,0 +1,51 @@
+.product {
+    padding-bottom: 2rem;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  
+    &__title {
+      font-size: .8rem;
+    }
+  
+    &__description {
+      font-size: 0.7rem;
+    }
+  
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba(0,0,0, .2);
+    }
+  
+    &__add-cart {
+      position: absolute;
+      bottom: .8rem;
+      width: 60%;
+      left: 50%;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%);
+      transition: all .2s;
+      padding: 3px 12px;
+  
+    }
+  
+    &:hover &__add-cart {
+      visibility: visible;
+      opacity: 1;
+    }
+  
+  }
+  
+  :host(.mat-card-actions){
+    margin-bottom: 70px !important;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .product {
+      height: auto !important;
+      &__add-to-cart {
+        visibility: visible;
+        opacity: 1;
+      }
+  
+    }
+  }
+  

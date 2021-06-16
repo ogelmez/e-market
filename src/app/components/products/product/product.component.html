@@ -1,3 +1,14 @@
-<p>
-  product works!
-</p>
+<mat-card class=" h-100 product">
+  <img mat-card-image [src]="product.image" [alt]="product.title">
+  <mat-card-content>
+    <h4 class="product__title">
+      <a>{{product.title}}</a>
+    </h4>
+    <h5 class="product__price">{{product.price | priceFormatter}}	&#8378;</h5>
+    <p class="card-text product__description mb-5">{{product.description}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button  class="btn btn-primary product__add-cart">Sepete Ekle
+    </button>
+  </mat-card-actions>
+</mat-card>
