@@ -62,6 +62,22 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ]
+            },
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
             }
           }
         },
@@ -72,7 +88,16 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "e-market:build:production"
+              "browserTarget": "e-market:build:production",
+              "port": 4201
+            },
+            "test": {
+              "browserTarget": "e-market:build:test",
+              "port": 4202
+            },
+            "dev": {
+              "browserTarget": "e-market:build:dev",
+              "port": 4203
             }
           }
         },

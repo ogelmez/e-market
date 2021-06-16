@@ -3,11 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "serve-local": "ng serve -o",
+    "serve-test": "ng serve --configuration=test -o",
+    "serve-dev": "ng serve --configuration=dev -o",
+    "serve-prod": "ng serve --configuration=production -o",
+    "build-test": "ng build--configuration=test",
+    "build-dev": "ng build --configuration=dev",
+    "build-prod": "ng build --prod"
   },
   "private": true,
   "dependencies": {
