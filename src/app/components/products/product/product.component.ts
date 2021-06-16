@@ -14,11 +14,13 @@ export class ProductComponent implements OnInit {
 
   @Input('product') product: Product;
 
-  constructor() {
+  constructor(private store: Store<fromApp.AppState>) {
   }
 
   ngOnInit() { }
 
-
+  onAddProductToCart(): void {
+    this.store.dispatch(new AddProductToCart(this.product));
+  }
 
 }

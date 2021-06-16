@@ -1,0 +1,19 @@
+.product__cart {
+    position: fixed;
+    right: 1em;
+    top: 56px;
+    width: 35%;
+    z-index: 99;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .product__cart {
+      position: unset;
+      width: auto;
+      margin-bottom: 10px;
+    }
+  }
+  

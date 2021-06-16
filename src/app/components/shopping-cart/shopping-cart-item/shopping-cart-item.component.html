@@ -1,3 +1,33 @@
-<p>
-  shopping-cart-item works!
-</p>
+<div class="row align-items-center mb-3">
+  <div class="col-12 col-sm-12 col-md-2 text-center">
+    <img class="img-responsive" alt="prewiew" style="height: 60%; width: 60%" [src]="product.image" />
+  </div>
+  <div class="d-flex flex-column col-12 col-sm-12 col-md-10">
+    <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-10">
+      <h6 class="product__title"><strong>{{product.title}}</strong></h6>
+      <h6>
+        <small class="product__description">{{product.description}}</small>
+      </h6>
+    </div>
+    <div class="col-12 col-sm-12 text-sm-center col-md-10 text-md-right row product__container">
+      <div class="col-4 col-sm-4 col-md-6 text-md-right " style="padding-top: 5px">
+        <h6><strong>{{product.price | priceFormatter}} &#8378; <span class="text-muted">x</span></strong></h6>
+      </div>
+      <div class="col-4 col-sm-4 col-md-4">
+        <div class="quantity">
+          <input (click)="onIncrementCartItem()" type="button" value="+" class="plus" />
+          <input [value]="product.quantity" [disabled]="true" type="number" step="1" max="10" min="1" title="Qty"
+            class="qty" size="4" />
+          <input (click)="onDecrementCartItem()" type="button" value="-" class="minus" />
+        </div>
+      </div>
+      <div class="col-2 col-sm-2 col-md-2 text-right">
+        <button (click)="onRemoveCartItem()" type="button" class="btn btn-outline-primary btn-xs">
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<hr>

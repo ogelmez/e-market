@@ -8,7 +8,7 @@
     <p class="card-text product__description mb-5">{{product.description}}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button  class="btn btn-primary product__add-cart">Sepete Ekle
+    <button (click)="onAddProductToCart()" class="btn btn-primary product__add-cart">Sepete Ekle
     </button>
   </mat-card-actions>
 </mat-card>

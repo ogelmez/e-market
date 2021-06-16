@@ -1,3 +1,22 @@
-<p>
-  shopping-cart-list works!
-</p>
+<div class="product__cart" *ngIf="cart && cart.length > 0">
+  <div class="card shopping-cart">
+    <div class="card-header bg-primary text-light text-end">
+      <i class="fa fa-shopping-cart pr-2" aria-hidden="true"></i>
+      Sepet
+    </div>
+    <div class="card-body">
+      <app-shopping-cart-item *ngFor="let cartItem of cart" [product]="cartItem">
+      </app-shopping-cart-item>
+      <h4 class="display-4 text-center" *ngIf="cart.length === 0">
+        Sepet Boş
+      </h4>
+    </div>
+    <div class="card-footer bg-primary text-light">
+      <div class="pull-right" style="margin: 10px">
+        <div class="pull-right" style="margin: 5px">
+          Toplam: <b>{{totalPrice | priceFormatter}} &#8378;</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
