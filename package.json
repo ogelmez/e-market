@@ -13,7 +13,9 @@
     "serve-prod": "ng serve --configuration=production -o",
     "build-test": "ng build--configuration=test",
     "build-dev": "ng build --configuration=dev",
-    "build-prod": "ng build --prod"
+    "build-prod": "ng build --prod",
+    "docker-build" : "docker build -t e-market:latest .",
+    "docker-serve" : "docker run --rm -it -p 8080:80 e-market"
   },
   "private": true,
   "dependencies": {
