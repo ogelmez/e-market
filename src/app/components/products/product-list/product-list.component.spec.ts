@@ -4,6 +4,12 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ProductListComponent } from './product-list.component';
+import { reducers } from 'src/app/store/app.reducer';
+import { StoreModule } from '@ngrx/store';
+import { ProductComponent } from '../product/product.component';
+import { CoreModule } from 'src/app/core/core.module';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -11,9 +17,11 @@ describe('ProductListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductListComponent ]
+      declarations: [ProductListComponent, ProductComponent],
+      imports: [StoreModule.forRoot(reducers), CoreModule,MatCardModule,
+        MatButtonModule,]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,7 +30,7 @@ describe('ProductListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create product-list', () => {
     expect(component).toBeTruthy();
   });
 });

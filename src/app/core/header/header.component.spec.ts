@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from 'src/app/store/app.reducer';
 
 import { HeaderComponent } from './header.component';
 
@@ -8,7 +10,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent ],
+      imports : [StoreModule.forRoot(reducers)]
     })
     .compileComponents();
   }));
@@ -19,7 +22,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create header', () => {
     expect(component).toBeTruthy();
   });
 });

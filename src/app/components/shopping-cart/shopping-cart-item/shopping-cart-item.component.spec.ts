@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ShoppingCartItemComponent } from './shopping-cart-item.component';
+import { reducers } from 'src/app/store/app.reducer';
+import { StoreModule } from '@ngrx/store';
+import { CoreModule } from 'src/app/core/core.module';
 
 describe('ShoppingCartItemComponent', () => {
   let component: ShoppingCartItemComponent;
@@ -11,7 +14,8 @@ describe('ShoppingCartItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShoppingCartItemComponent ]
+      declarations: [ ShoppingCartItemComponent ],
+      imports : [StoreModule.forRoot(reducers),CoreModule]
     })
     .compileComponents();
   }));
@@ -20,9 +24,5 @@ describe('ShoppingCartItemComponent', () => {
     fixture = TestBed.createComponent(ShoppingCartItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

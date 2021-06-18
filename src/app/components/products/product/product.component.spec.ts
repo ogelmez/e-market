@@ -4,6 +4,12 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ProductComponent } from './product.component';
+import { CommonModule } from '@angular/common';
+import { CoreModule } from 'src/app/core/core.module';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from 'src/app/store/app.reducer';
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
@@ -11,9 +17,16 @@ describe('ProductComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductComponent ]
+      declarations: [ProductComponent],
+      imports: [
+        CommonModule,
+        CoreModule,
+        MatCardModule,
+        MatButtonModule,
+        StoreModule.forRoot(reducers)
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,7 +35,4 @@ describe('ProductComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
